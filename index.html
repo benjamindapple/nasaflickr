@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>NASA Flickr Interface </title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/css/ibmflickr.css" rel="stylesheet" />
+    <script src="scripts/ajax.js"></script>
+    <script src="scripts/loadingpanel.js"></script>
+    <script src="scripts/ibmflickr.js"></script>
+    <script src="scripts/app-init.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar-header">
+            <div class="row header-row">
+                    <img src="http://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg" alt="NASA Logo" />
+                <div class="searchDiv">
+                    <label>
+                        <input id="searchBox" type="text" placeholder="Search">
+                        <button id="searchBtn" class="searchBtn"><i class="glyphicon glyphicon-search"></i></button>
+                    </label>
+                </div>
+                <div class="viewSelector">
+                    <!--<div class="btn-group">
+                        <button id="GalleryBtn" class="btn" data-mode="0" >Gallery</button>
+                        <button id="ThumbnailsBtn" class="btn btn-selected" data-mode="0">Thumbnails</button>
+                    </div>-->
+                    <div id="perPage" class="pagejump">
+                        <span>Items per page:</span>
+                        <select id="perPageSelect">
+                            <option value="12">12</option>
+                            <option value="36">36</option>
+                            <option value="60">60</option>
+                            <option value="96">96</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mainBody" class="container body-content">
+        <div id="messageCenter" class="hidden"></div>
+        <div id="imagerows" class="container"></div>
+        <div id="pager"></div>
+    </div>
+    <div id="imgModalBackdrop">
+        <div id="imgModalContainer" class="container">
+        </div>
+        <div class="icon icon-close">
+            <a id="imgCloseLink" href="javascript:void(0);">
+                <i class="glyphicon glyphicon-remove"></i>
+            </a>
+        </div>
+        <div class="icon icon-left">
+            <a id="imgPrevLink" href="javascript:void(0);">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+            </a>
+        </div>
+        <div class="icon icon-right">
+            <a id="imgNextLink" href="javascript:void(0);">
+                <i class="glyphicon glyphicon-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+    <div id="LoadingPanelOverlay" class="LoadingPanel" style="display:none; z-index:90050">
+        <img id="LoadingImage" src="content/images/just_earth_200.gif" alt="Loading..." style="border-width:0px; z-index:90051; vertical-align:middle;" />
+    </div>
+</body>
+</html>

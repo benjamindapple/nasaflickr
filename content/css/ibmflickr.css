@@ -1,0 +1,391 @@
+﻿body {
+    padding-bottom: 20px;
+    background-color: #000;
+    background: url(https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/starfield-banner.jpg);
+    background-repeat: repeat;
+    min-width: 320px;
+}
+
+.header-row {
+    height: 100px;
+    width: 100%;
+    padding: 0 15px;
+    display: inline-block;
+}
+
+.navbar-header {
+    width: 100%;
+}
+
+.navbar-inverse {
+    background-color: transparent;
+    border: none;
+}
+
+.body-content {
+    padding: 0;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.searchDiv {
+    display: inline-block;
+}
+
+    .searchDiv label {
+        width: 100%;
+    }
+
+    .searchDiv .glyphicon {
+        color: #555;
+    }
+
+    .searchDiv input {
+        width: 150px;
+        text-indent: 10px;
+        background-color: #555;
+        border: 4px solid #333;
+        border-right: 36px solid #333;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        margin: 10px 0;
+        font-weight: normal;
+        color: #fff;
+    }
+
+.searchBtn {
+    border: 1px solid #333;
+    padding-bottom: 0px;
+    margin-left: -38px;
+    background-color: #333;
+}
+
+.viewSelector {
+    text-align: center;
+    padding: 0 15px;
+    display: inline-block;
+    position: relative;
+}
+
+    .viewSelector .btn {
+        background-color: #333;
+        border: 1px solid #555;
+        color: #fff;
+    }
+
+        .viewSelector .btn:hover {
+            background-color: #555;
+            border: 1px solid #999;
+            text-decoration: underline;
+        }
+
+    .viewSelector .btn-selected {
+        background-color: #555;
+        color: #999;
+    }
+
+        .viewSelector .btn-selected:hover {
+            color: #999;
+            text-decoration: none;
+        }
+
+#messageCenter {
+    display: inline-block;
+    width: 100%;
+    background-color: #333;
+    background: rgba(51, 51, 51, 0.7);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: #eee;
+    padding: 10px;
+}
+
+    #messageCenter .btn {
+        position: relative;
+        float: right;
+        padding: 3px 6px;
+        background-color: #555;
+        color: #eee;
+        border: 1px solid #eee;
+    }
+
+#GalleryBtn {
+    -webkit-border-radius: 20px 0px 0px 20px;
+    -moz-border-radius: 20px 0px 0px 20px;
+    border-radius: 20px 0px 0px 20px;
+    margin-right: 1px;
+}
+
+#ThumbnailsBtn {
+    -webkit-border-radius: 0px 20px 20px 0px;
+    -moz-border-radius: 0px 20px 20px 0px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+#imagerows {
+    background-color: #333;
+    background: rgba(51, 51, 51, 0.7);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 0;
+    z-index: 5;
+}
+
+.imgDiv {
+    padding: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.imgThumb {
+    border: 2px solid #eee;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    position: relative;
+    width: 154px;
+    height: 154px;
+    z-index: 3;
+}
+
+    .imgThumb:hover {
+        z-index: 2;
+    }
+
+.titleDiv {
+    position: absolute;
+    top: 6px;
+    left: 0px;
+    right: 0px;
+    background: rgba(0, 0, 0, 0.4);
+    width: 150px;
+    height: 150px;
+    color: #fff;
+    z-index: 3;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    padding: 4px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+    .titleDiv:hover {
+        z-index: 4;
+    }
+
+    .titleDiv span {
+        position: absolute;
+        bottom: 10px;
+        width: 95%;
+        margin: auto;
+        overflow-wrap: break-word;
+    }
+
+.pagination > li > a, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+    border: 1px solid #333;
+    background-color: #555;
+}
+
+.pagination > li > a, .pagination > .disabled > a {
+    color: #eee;
+}
+
+    .pagination > li > a:hover, .pagination > .disabled > a:hover {
+        color: #2a6496;
+    }
+
+#pager {
+    text-align: center;
+}
+
+.pagejump {
+    padding: 5px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    width: 20%;
+    min-width: 200px;
+    margin: auto;
+    color: #fff;
+    border: 1px solid #333;
+    background-color: #555;
+}
+
+    .pagejump span {
+        padding: 5px;
+    }
+
+    .pagejump select {
+        background-color: #333;
+        color: #eee;
+        padding: 2px 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+.LoadingPanel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#imgModalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 100;
+    -webkit-transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
+    transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
+}
+
+    #imgModalBackdrop.modal-visible {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #imgModalBackdrop .icon {
+        position: absolute;
+        top: 50%;
+        font-size: 35px;
+    }
+
+    #imgModalBackdrop .icon-close {
+        top: 1%;
+        right: 10%;
+    }
+
+    #imgModalBackdrop .icon a {
+        color: #999;
+        padding: 5px;
+    }
+
+    #imgModalBackdrop .icon-left {
+        left: 1%;
+    }
+
+    #imgModalBackdrop .icon-right {
+        right: 1%;
+    }
+
+#imgModalContainer {
+    height: 100%;
+    text-align: center;
+}
+
+    #imgModalContainer img {
+        max-width: 80%;
+        max-height: 80%;
+        width: auto;
+        height: auto;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    #imgModalContainer span {
+        font-size: 14pt;
+        color: #eee;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: 2%;
+    }
+
+@media(min-height: 700px) {
+    #imgModalContainer span {
+        bottom: 5%;
+        font-size: 18pt;
+    }
+}
+
+@media(max-width : 350px ) {
+    .viewSelector .btn {
+        padding: 6px;
+    }
+}
+
+@media(max-width : 670px ) {
+    .searchDiv {
+        position: absolute;
+        top: 50px;
+    }
+
+    .viewSelector {
+        position: absolute;
+        top: 10px;
+    }
+
+    #imgModalBackdrop .icon {
+        font-size: 30px;
+    }
+
+    #imgModalBackdrop .icon-close {
+        top: 2%;
+        right: 2%;
+    }
+}
+
+@media (min-width: 350px) {
+    .searchDiv {
+        min-width: 200px;
+    }
+
+        .searchDiv input {
+            width: 200px;
+        }
+
+    .imgDiv {
+        padding: 15px;
+    }
+
+    .titleDiv {
+        top: 17px;
+    }
+
+    .viewSelector .btn {
+        width: 100px;
+    }
+}
+
+@media (min-width: 400px) {
+    .body-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #imagerows {
+        padding: 0 15px;
+    }
+}
+
+@media (min-width: 670px) {
+    .viewSelector {
+        position: relative;
+        float: right;
+        top: 26px;
+    }
+}
