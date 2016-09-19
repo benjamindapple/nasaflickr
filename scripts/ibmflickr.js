@@ -3,7 +3,7 @@
     var apiKey = 'a5e95177da353f58113fd60296e1d250';
     var nasaUid = '24662369@N07';
     var apiUrl = 'https://api.flickr.com/services/rest/?format=json&nojsoncallback=1&api_key=' + apiKey + '&user_id=' + nasaUid;
-    var empttHref = 'javascript:void(0);';
+    var emptyHref = 'javascript:void(0);';
     var imgRowsContainerId = 'imagerows';
     var mainBodyId = 'mainBody';
     var modalContainerId = 'imgModalContainer';
@@ -78,7 +78,7 @@
             ul.classList.add('pagination');
             var pli = document.createElement("li");
             var pa = document.createElement('a');
-            pa.href = empttHref;
+            pa.href = emptyHref;
             pa.innerHTML = '<';
             if (cbData && cbData.term) {
                 pa.setAttribute('data-search-term', cbData.term);
@@ -97,7 +97,7 @@
             for (i; i <= end; i++) {
                 var li = document.createElement("li");
                 var a = document.createElement('a');
-                a.href = empttHref;
+                a.href = emptyHref;
                 a.innerHTML = i;
                 if (cbData && cbData.term) {
                     a.setAttribute('data-search-term', cbData.term);
@@ -113,7 +113,7 @@
             }
             var nli = document.createElement("li");
             var na = document.createElement('a');
-            na.href = empttHref;
+            na.href = emptyHref;
             na.innerHTML = '>';
             if (cbData && cbData.term) {
                 na.setAttribute('data-search-term', cbData.term);
@@ -193,16 +193,6 @@
             addSearchSummary(data.photos.page, data.photos.pages, data.photos.perpage, data.photos.total, cbData);
         }
         addPagination(data.photos.page, data.photos.pages, data.photos.perpage, data.photos.total, cbData);
-    }
-
-    function searchLoad(term, page) {
-        var perPage = document.getElementById(perPageSelectId).value;
-        var url = apiUrl + '&method=flickr.photos.search&text=' + term + '&per_page=' + perPage;
-        if (page) {
-            url += '&page=' + page;
-        }
-        LoadingPanel.showLoadingPanel(mainBodyId);
-        AJAX.getJSONAsync(url, null, loadImageRows, null, LoadingPanel.hideLoadingPanel, { term: term });
     }
 
     function attachPreviewKeyListener(img) {
@@ -296,6 +286,20 @@
         return parent == document.body ? null : parent;
     }
 
+    IBMFlickr.searchLoad = function (term, page) {
+        if (term) {
+            var perPage = document.getElementById(perPageSelectId).value;
+            var url = apiUrl + '&method=flickr.photos.search&text=' + term + '&per_page=' + perPage;
+            if (page) {
+                url += '&page=' + page;
+            }
+            LoadingPanel.showLoadingPanel(mainBodyId);
+            AJAX.getJSONAsync(url, null, loadImageRows, null, LoadingPanel.hideLoadingPanel, { term: term });
+        } else {
+            IBMFlickr.loadMoreImages(page);
+        }
+    };
+
     IBMFlickr.closePreview = function () {
         document.getElementById(modalContainerId).parentElement.classList.remove('modal-visible');
         document.body.style.overflow = '';
@@ -329,7 +333,7 @@
                 page = a.getAttribute('data-page');
             }
             if (a.getAttribute('data-search-term')) {
-                searchLoad(a.getAttribute('data-search-term'),page);
+                IBMFlickr.searchLoad(a.getAttribute('data-search-term'), page);
             } else {
                 IBMFlickr.loadMoreImages(page);
             }
@@ -339,7 +343,7 @@
     IBMFlickr.search = function (inputId, page) {
         var term = document.getElementById(inputId).value;
         if (term) {
-            searchLoad(term);
+            IBMFlickr.searchLoad(term);
         }
     };
 

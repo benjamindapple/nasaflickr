@@ -43,7 +43,14 @@
                 clearTimeout(lpTimer);
             }
             lpTimer = setTimeout(centerLoadingPanel, 500);
+            document.getElementById('LoadingImage').focus();
         }
+    }
+
+    function blurInputs() {
+        document.getElementsByTagName('input').forEach(function () {
+            this.blur();
+        });
     }
 
     window.onscroll = centerLoadingPanel;
@@ -58,6 +65,7 @@
             }
         }
         visible = true;
+        //blurInputs();
         centerLoadingPanel();
     }
 

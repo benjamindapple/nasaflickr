@@ -3,8 +3,9 @@
     //document.getElementById('GalleryBtn').onclick = function () { IBMFlickr.switchMode(this); return IBMFlickr.preventDefault(); };
     //document.getElementById('ThumbnailsBtn').onclick = function () { IBMFlickr.switchMode(this); return IBMFlickr.preventDefault(); };
     document.getElementById('perPageSelect').value = '36';
-    document.getElementById('perPageSelect').onchange = function () { IBMFlickr.loadMoreImages(); return IBMFlickr.preventDefault(); };
-    document.getElementById('searchBox').onkeyup = function (e) {
+    var searchBox = document.getElementById('searchBox')
+    document.getElementById('perPageSelect').onchange = function () { IBMFlickr.searchLoad(searchBox.value, 1); return IBMFlickr.preventDefault(); };
+    searchBox.onkeyup = function (e) {
         if (e.which == 13) {
             e.preventDefault = true;
             IBMFlickr.search("searchBox");
